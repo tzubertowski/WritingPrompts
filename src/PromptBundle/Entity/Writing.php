@@ -2,6 +2,7 @@
 
 namespace PromptBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -39,6 +40,35 @@ class Writing
      */
     private $content;
 
+    /**
+     * @OneToOne(targetEntity="UserBundle\User")
+     * @JoinColumn(name="author_id", referencedColumnName="id")
+     **/
+    private $author;
+
+    /**
+     * @ManyToMany(targetEntity="PromptBundle\Vote")
+     * @JoinTable(name="writings_votes",
+     *      joinColumns={@JoinColumn(name="writing_id", referencedColumnName="id")},
+     *      inverseJoinColumns={@JoinColumn(name="vote_id", referencedColumnName="id", unique=true)}
+     *      )
+     **/
+    private $votes;
+
+    /**
+     * @ManyToOne(targetEntity="PromptBundle\Prompt", inversedBy="writings")
+     * @JoinColumn(name="prompt_id", referencedColumnName="id")
+     **/
+    private $prompt;
+
+    /**
+     * @var integer
+     */
+    private $rating;
+
+    public function __construct() {
+        $this->votes = new ArrayCollection();
+    }
 
     /**
      * Get id
@@ -163,5 +193,79 @@ class Writing
     public function getContent()
     {
         return $this->content;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getAuthor()
+    {
+        return $this->author;
+    }
+
+    /**
+     * @param mixed $author
+     */
+    public function setAuthor($author)
+    {
+        $this->author = $author;
+    }
+
+    /**
+     * @return int
+     */
+    public function getRating()
+    {
+        return $this->rating;
+    }
+
+    /**
+     * @param int $rating
+     */
+    public function setRating($rating)
+    {
+        $this->rating = $rating;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getVotes()
+    {
+        return $this->votes;
+    }
+
+    /**
+     * @param mixed $votes
+     */
+    public function setVotes($votes)
+    {
+        $this->votes = $votes;
+    }
+
+    /**
+     * @param Vote $vote
+     */
+    public function addVotes(\PromptBundle\Entity\Vote $vote)
+    {
+        $this->votes[]      = $vote;
+        // Zmienia wartosc ratingu w zaleznosci od glosu
+        $this->setRating    = $this->rating + $vote->getValue();
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPrompt()
+    {
+        return $this->prompt;
+    }
+
+    /**
+     * @param mixed $prompt
+     */
+    public function setPrompt($prompt)
+    {
+        $this->prompt = $prompt;
     }
 }

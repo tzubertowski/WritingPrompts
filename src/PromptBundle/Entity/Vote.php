@@ -3,6 +3,8 @@
 namespace PromptBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use PromptBundle\PromptBundle;
+use UserBundle\UserBundle;
 
 /**
  * Vote
@@ -19,6 +21,11 @@ class Vote
      */
     private $value;
 
+    /**
+     * @ManyToOne(targetEntity="UserBundle\User", inversedBy="votes")
+     * @JoinColumn(name="product_id", referencedColumnName="id")
+     **/
+    private $user;
 
     /**
      * Get id
@@ -52,4 +59,21 @@ class Vote
     {
         return $this->value;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getUser()
+    {
+        return $this->user;
+    }
+
+    /**
+     * @param mixed $user
+     */
+    public function setUser(\UserBundle\Entity\User $user)
+    {
+        $this->user = $user;
+    }
+
 }

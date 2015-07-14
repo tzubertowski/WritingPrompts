@@ -2,6 +2,7 @@
 
 namespace PromptBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -29,6 +30,14 @@ class WeeklyPromptPoll
      */
     private $dateEnd;
 
+    /**
+     * @OneToMany(targetEntity="PromptBundle\PromptPoll", mappedBy="weeklyPoll")
+     **/
+    private $promptPolls;
+
+    public function __construct() {
+        $this->promptPolls = new ArrayCollection();
+    }
 
     /**
      * Get id
@@ -107,5 +116,25 @@ class WeeklyPromptPoll
     public function getDateEnd()
     {
         return $this->dateEnd;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPromptPolls()
+    {
+        return $this->promptPolls;
+    }
+
+    /**
+     * @param mixed $promptPolls
+     */
+    public function setPromptPolls($promptPolls)
+    {
+        $this->promptPolls = $promptPolls;
+    }
+
+    public function addPromptPoll(\PromptBundle\Entity\PromptPoll $promptPoll) {
+        $this->promptPolls[] = $promptPoll;
     }
 }

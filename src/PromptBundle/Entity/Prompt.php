@@ -2,7 +2,9 @@
 
 namespace PromptBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
+use PromptBundle\PromptBundle;
 
 /**
  * Prompt
@@ -44,6 +46,14 @@ class Prompt
      */
     private $status;
 
+    /**
+     * @OneToMany(targetEntity="PromptBundle\Writing", mappedBy="Prompt")
+     **/
+    private $writings;
+
+    public function __construct() {
+        $this->writings = new ArrayCollection();
+    }
 
     /**
      * Get id
@@ -192,4 +202,30 @@ class Prompt
     {
         return $this->status;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getWritings()
+    {
+        return $this->writings;
+    }
+
+    /**
+     * @param mixed $writings
+     */
+    public function setWritings($writings)
+    {
+        $this->writings = $writings;
+    }
+
+    /**
+     * @param Writing $writing
+     */
+    public function addWritings(\PromptBundle\Entity\Writing $writing)
+    {
+        $this->writings[] = $writing;
+    }
+
+
 }
