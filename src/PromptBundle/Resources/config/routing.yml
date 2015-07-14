@@ -1,0 +1,3 @@
+prompt_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: PromptBundle:Default:index }

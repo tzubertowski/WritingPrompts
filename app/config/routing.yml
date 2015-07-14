@@ -1,3 +1,5 @@
-app:
-    resource: "@AppBundle/Controller/"
-    type:     annotation
+prompt:
+    resource: "@PromptBundle/Resources/config/routing.yml"
+    prefix:   /
+
+
