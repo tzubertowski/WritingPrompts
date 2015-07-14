@@ -1,0 +1,28 @@
+PromptBundle\Entity\Prompt:
+    type: entity
+    table: null
+    repositoryClass: PromptBundle\Entity\PromptRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        dateStart:
+            type: datetimetz
+            column: date_start
+        dateEnd:
+            type: datetimetz
+            column: date_end
+        promoted:
+            type: smallint
+        title:
+            type: string
+            length: 255
+        description:
+            type: string
+            length: 255
+        status:
+            type: smallint
+    lifecycleCallbacks: {  }

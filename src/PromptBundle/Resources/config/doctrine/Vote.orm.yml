@@ -1,0 +1,14 @@
+PromptBundle\Entity\Vote:
+    type: entity
+    table: null
+    repositoryClass: PromptBundle\Entity\VoteRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        value:
+            type: smallint
+    lifecycleCallbacks: {  }

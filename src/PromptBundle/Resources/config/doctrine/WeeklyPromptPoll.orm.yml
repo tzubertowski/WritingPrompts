@@ -1,0 +1,21 @@
+PromptBundle\Entity\WeeklyPromptPoll:
+    type: entity
+    table: null
+    repositoryClass: PromptBundle\Entity\WeeklyPromptPollRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        dateCreated:
+            type: datetimetz
+            column: date_created
+        dateStart:
+            type: datetimetz
+            column: date_start
+        dateEnd:
+            type: datetimetz
+            column: date_end
+    lifecycleCallbacks: {  }

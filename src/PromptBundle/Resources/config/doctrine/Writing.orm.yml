@@ -1,0 +1,26 @@
+PromptBundle\Entity\Writing:
+    type: entity
+    table: null
+    repositoryClass: PromptBundle\Entity\WritingRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        dateCreated:
+            type: datetimetz
+            column: date_created
+        dateUpdated:
+            type: datetimetz
+            column: date_updated
+        status:
+            type: smallint
+        title:
+            type: string
+            length: 255
+        content:
+            type: string
+            length: 255
+    lifecycleCallbacks: {  }
