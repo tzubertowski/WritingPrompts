@@ -140,7 +140,7 @@ class PromptPoll
     public function setRating($rating)
     {
         $this->rating = $rating;
-    }
+    } 
 
     /**
      * @return mixed

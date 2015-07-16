@@ -3,11 +3,20 @@
     <head>
         <meta charset="UTF-8" />
         <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
+        {% block stylesheets %}
+            <link href="{{ asset('assets/vendor/bootstrap/dist/css/bootstrap.min.css') }}" rel="stylesheet">
+            <!-- Include roboto.css to use the Roboto web font, material.css to include the theme and ripples.css to style the ripple effect -->
+            <link href="{{ asset('assets/vendor/bootstrap-material-design/dist/css/roboto.min.css') }}" rel="stylesheet">
+            <link href="{{ asset('assets/vendor/bootstrap-material-design/dist/css/material.min.css') }}" rel="stylesheet">
+            <link href="{{ asset('assets/vendor/bootstrap-material-design/dist/css/ripples.min.css') }}" rel="stylesheet">
+        {% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
         {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+        {% block javascripts %}
+            <script src="{{ asset('assets/vendor/bootstrap-material-design') }}"></script>
+            <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+        {% endblock %}
     </body>
 </html>

@@ -11,4 +11,7 @@ Newslettter
 CRON sends out prepared .PDF file with the best chosen writings to all the subscribed users.
 Sent once per week.
 
-
+Requirements
+==============
+This is a stanard SQL installation of symphony. Nothing much is needed there.
+We use bower for frontend dependencies management and composer as a standard PHP dependency manager.

@@ -1,0 +1,29 @@
+{
+  "name": "writingPrompts",
+  "version": "0.1.0",
+  "homepage": "https://github.com/tzubertowski/WritingPrompts",
+  "authors": [
+    "Tomek Żubertowski <tzubertowski@gmail.com>"
+  ],
+  "description": "Bower file for writingPrompts",
+  "keywords": [
+    "writing",
+    "prompts",
+    "wp",
+    "writingprompts"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "web/assets/vendor/",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.4",
+    "bootstrap": "~3.3.5",
+    "bootstrap-material-design": "~0.3.0"
+  }
+}
