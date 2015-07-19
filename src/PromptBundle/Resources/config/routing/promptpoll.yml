@@ -1,0 +1,30 @@
+promptpoll:
+    path:     /
+    defaults: { _controller: "PromptBundle:PromptPoll:index" }
+
+promptpoll_show:
+    path:     /{id}/show
+    defaults: { _controller: "PromptBundle:PromptPoll:show" }
+
+promptpoll_new:
+    path:     /new
+    defaults: { _controller: "PromptBundle:PromptPoll:new" }
+
+promptpoll_create:
+    path:     /create
+    defaults: { _controller: "PromptBundle:PromptPoll:create" }
+    methods:  POST
+
+promptpoll_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "PromptBundle:PromptPoll:edit" }
+
+promptpoll_update:
+    path:     /{id}/update
+    defaults: { _controller: "PromptBundle:PromptPoll:update" }
+    methods:  [POST, PUT]
+
+promptpoll_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "PromptBundle:PromptPoll:delete" }
+    methods:  [POST, DELETE]

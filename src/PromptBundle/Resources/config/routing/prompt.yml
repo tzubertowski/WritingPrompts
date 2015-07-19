@@ -1,0 +1,30 @@
+prompt:
+    path:     /
+    defaults: { _controller: "PromptBundle:Prompt:index" }
+
+prompt_show:
+    path:     /{id}/show
+    defaults: { _controller: "PromptBundle:Prompt:show" }
+
+prompt_new:
+    path:     /new
+    defaults: { _controller: "PromptBundle:Prompt:new" }
+
+prompt_create:
+    path:     /create
+    defaults: { _controller: "PromptBundle:Prompt:create" }
+    methods:  POST
+
+prompt_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "PromptBundle:Prompt:edit" }
+
+prompt_update:
+    path:     /{id}/update
+    defaults: { _controller: "PromptBundle:Prompt:update" }
+    methods:  [POST, PUT]
+
+prompt_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "PromptBundle:Prompt:delete" }
+    methods:  [POST, DELETE]

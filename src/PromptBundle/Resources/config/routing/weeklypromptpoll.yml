@@ -1,0 +1,30 @@
+weeklypromptpoll:
+    path:     /
+    defaults: { _controller: "PromptBundle:WeeklyPromptPoll:index" }
+
+weeklypromptpoll_show:
+    path:     /{id}/show
+    defaults: { _controller: "PromptBundle:WeeklyPromptPoll:show" }
+
+weeklypromptpoll_new:
+    path:     /new
+    defaults: { _controller: "PromptBundle:WeeklyPromptPoll:new" }
+
+weeklypromptpoll_create:
+    path:     /create
+    defaults: { _controller: "PromptBundle:WeeklyPromptPoll:create" }
+    methods:  POST
+
+weeklypromptpoll_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "PromptBundle:WeeklyPromptPoll:edit" }
+
+weeklypromptpoll_update:
+    path:     /{id}/update
+    defaults: { _controller: "PromptBundle:WeeklyPromptPoll:update" }
+    methods:  [POST, PUT]
+
+weeklypromptpoll_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "PromptBundle:WeeklyPromptPoll:delete" }
+    methods:  [POST, DELETE]

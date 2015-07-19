@@ -1,0 +1,51 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>Prompt list</h1>
+
+    <table class="records_list">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Datestart</th>
+                <th>Dateend</th>
+                <th>Promoted</th>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Status</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td><a href="{{ path('prompt_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                <td>{{ entity.dateStart }}</td>
+                <td>{{ entity.dateEnd }}</td>
+                <td>{{ entity.promoted }}</td>
+                <td>{{ entity.title }}</td>
+                <td>{{ entity.description }}</td>
+                <td>{{ entity.status }}</td>
+                <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('prompt_show', { 'id': entity.id }) }}">show</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('prompt_edit', { 'id': entity.id }) }}">edit</a>
+                    </li>
+                </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+        <ul>
+        <li>
+            <a href="{{ path('prompt_new') }}">
+                Create a new entry
+            </a>
+        </li>
+    </ul>
+    {% endblock %}

@@ -1,0 +1,30 @@
+vote:
+    path:     /
+    defaults: { _controller: "PromptBundle:Vote:index" }
+
+vote_show:
+    path:     /{id}/show
+    defaults: { _controller: "PromptBundle:Vote:show" }
+
+vote_new:
+    path:     /new
+    defaults: { _controller: "PromptBundle:Vote:new" }
+
+vote_create:
+    path:     /create
+    defaults: { _controller: "PromptBundle:Vote:create" }
+    methods:  POST
+
+vote_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "PromptBundle:Vote:edit" }
+
+vote_update:
+    path:     /{id}/update
+    defaults: { _controller: "PromptBundle:Vote:update" }
+    methods:  [POST, PUT]
+
+vote_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "PromptBundle:Vote:delete" }
+    methods:  [POST, DELETE]

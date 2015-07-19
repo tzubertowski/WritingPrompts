@@ -1,0 +1,45 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>WeeklyPromptPoll list</h1>
+
+    <table class="records_list">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Datecreated</th>
+                <th>Datestart</th>
+                <th>Dateend</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td><a href="{{ path('weeklypromptpoll_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                <td>{{ entity.dateCreated }}</td>
+                <td>{{ entity.dateStart }}</td>
+                <td>{{ entity.dateEnd }}</td>
+                <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('weeklypromptpoll_show', { 'id': entity.id }) }}">show</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('weeklypromptpoll_edit', { 'id': entity.id }) }}">edit</a>
+                    </li>
+                </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+        <ul>
+        <li>
+            <a href="{{ path('weeklypromptpoll_new') }}">
+                Create a new entry
+            </a>
+        </li>
+    </ul>
+    {% endblock %}

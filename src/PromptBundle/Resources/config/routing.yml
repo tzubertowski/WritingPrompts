@@ -1,3 +1,23 @@
+prompt_writing:
+    resource: "@PromptBundle/Resources/config/routing/writing.yml"
+    prefix:   /writing
+
+prompt_weeklypromptpoll:
+    resource: "@PromptBundle/Resources/config/routing/weeklypromptpoll.yml"
+    prefix:   /weeklypromptpoll
+
+prompt_promptpoll:
+    resource: "@PromptBundle/Resources/config/routing/promptpoll.yml"
+    prefix:   /promptpoll
+
+prompt_vote:
+    resource: "@PromptBundle/Resources/config/routing/vote.yml"
+    prefix:   /vote
+
+prompt_prompt:
+    resource: "@PromptBundle/Resources/config/routing/prompt.yml"
+    prefix:   /prompt
+
 prompt_homepage:
     path:     /hello/{name}
     defaults: { _controller: PromptBundle:Default:index }
