@@ -41,14 +41,14 @@ class Writing
     private $content;
 
     /**
-     * @OneToOne(targetEntity="UserBundle\User")
-     * @JoinColumn(name="author_id", referencedColumnName="id")
+     * @ORM\OneToOne(targetEntity="UserBundle\User")
+     * @ORM\JoinColumn(name="author_id", referencedColumnName="id")
      **/
     private $author;
 
     /**
-     * @ManyToMany(targetEntity="PromptBundle\Vote")
-     * @JoinTable(name="writings_votes",
+     * @ORM\ManyToMany(targetEntity="PromptBundle\Vote")
+     * @ORM\JoinTable(name="writings_votes",
      *      joinColumns={@JoinColumn(name="writing_id", referencedColumnName="id")},
      *      inverseJoinColumns={@JoinColumn(name="vote_id", referencedColumnName="id", unique=true)}
      *      )
@@ -56,8 +56,8 @@ class Writing
     private $votes;
 
     /**
-     * @ManyToOne(targetEntity="PromptBundle\Prompt", inversedBy="writings")
-     * @JoinColumn(name="prompt_id", referencedColumnName="id")
+     * @ORM\ManyToOne(targetEntity="PromptBundle\Prompt", inversedBy="writings")
+     * @ORM\JoinColumn(name="prompt_id", referencedColumnName="id")
      **/
     private $prompt;
 

@@ -36,8 +36,8 @@ framework:
 twig:
     debug:            "%kernel.debug%"
     strict_variables: "%kernel.debug%"
-
-# Assetic Configuration
+    form:
+        resources: ['bootstrap_3_layout.html.twig']
 assetic:
     debug:          "%kernel.debug%"
     use_controller: false

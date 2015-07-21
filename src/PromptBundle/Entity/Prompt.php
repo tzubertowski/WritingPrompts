@@ -47,7 +47,7 @@ class Prompt
     private $status;
 
     /**
-     * @OneToMany(targetEntity="PromptBundle\Writing", mappedBy="Prompt")
+     * @ORM\OneToMany(targetEntity="PromptBundle\Writing", mappedBy="Prompt")
      **/
     private $writings;
 

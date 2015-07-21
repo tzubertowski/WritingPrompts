@@ -22,8 +22,8 @@ class Vote
     private $value;
 
     /**
-     * @ManyToOne(targetEntity="UserBundle\User", inversedBy="votes")
-     * @JoinColumn(name="product_id", referencedColumnName="id")
+     * @ORM\ManyToOne(targetEntity="UserBundle\User", inversedBy="votes")
+     * @ORM\JoinColumn(name="product_id", referencedColumnName="id")
      **/
     private $user;
 

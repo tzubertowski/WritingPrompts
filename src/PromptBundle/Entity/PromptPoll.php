@@ -30,8 +30,8 @@ class PromptPoll
     private $rating;
 
     /**
-     * @ManyToMany(targetEntity="PromptBundle\Vote")
-     * @JoinTable(name="writings_votes",
+     * @ORM\ManyToMany(targetEntity="PromptBundle\Vote")
+     * @ORM\JoinTable(name="writings_votes",
      *      joinColumns={@JoinColumn(name="promptpoll_id", referencedColumnName="id")},
      *      inverseJoinColumns={@JoinColumn(name="vote_id", referencedColumnName="id", unique=true)}
      *      )
@@ -39,8 +39,8 @@ class PromptPoll
     private $votes;
 
     /**
-     * @ManyToOne(targetEntity="PromptBundle\WeeklyPromptPoll", inversedBy="$promptPolls")
-     * @JoinColumn(name="weeklypromptpoll_id", referencedColumnName="id")
+     * @ORM\ManyToOne(targetEntity="PromptBundle\WeeklyPromptPoll", inversedBy="$promptPolls")
+     * @ORM\JoinColumn(name="weeklypromptpoll_id", referencedColumnName="id")
      **/
     private $weeklyPoll;
 

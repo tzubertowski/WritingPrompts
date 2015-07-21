@@ -31,7 +31,7 @@ class WeeklyPromptPoll
     private $dateEnd;
 
     /**
-     * @OneToMany(targetEntity="PromptBundle\PromptPoll", mappedBy="weeklyPoll")
+     * @ORM\OneToMany(targetEntity="PromptBundle\PromptPoll", mappedBy="weeklyPoll")
      **/
     private $promptPolls;
 
